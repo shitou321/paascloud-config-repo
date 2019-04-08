@@ -16,7 +16,8 @@ spring:
           from: paascloudTest@163.com
       turbine:
         clusters: default
-        location: paascloud-monitor
+        location: 127.0.0.1
+        #paascloud-monitor
       routes:
         endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
 
