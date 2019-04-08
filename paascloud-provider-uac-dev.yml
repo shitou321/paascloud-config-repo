@@ -5,7 +5,8 @@ spring:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_uac?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/paascloud_uac?characterEncoding=utf8&useSSL=false
+    #jdbc:mysql://paascloud-db-mysql:3306/paascloud_uac?characterEncoding=utf8&useSSL=false
 
 mybatis:
   type-aliases-package: com.paascloud.provider.model.domain
@@ -35,8 +36,10 @@ security:
     client:
       clientId: paascloud-client-uac
       clientSecret: paascloudClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://127.0.0.1:7979/uac/oauth/token
+      #http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://127.0.0.1:7979/uac/oauth/authorize
+      #http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
       id: paascloud-resource-uac
       filter-order: 3
@@ -52,9 +55,12 @@ paascloud:
       consumerGroup: CID_UAC
       producerGroup: PID_UAC
   auth:
-    rest-pwd-url: http://dev-login.paascloud.net/resetPwd?resetPwdKey=
-    active-user-url: http://dev-api.paascloud.net:7979/uac/auth/activeUser/
-    refresh-token-url: http://dev-api.paascloud.net:7979/uac/oauth/token
+    rest-pwd-url: http://127.0.0.1/resetPwd?resetPwdKey=
+    #http://dev-login.paascloud.net/resetPwd?resetPwdKey=
+    active-user-url: http://127.0.0.1:7979/uac/auth/activeUser/
+    #http://dev-api.paascloud.net:7979/uac/auth/activeUser/
+    refresh-token-url: http://127.0.0.1:7979/uac/oauth/token
+    #http://dev-api.paascloud.net:7979/uac/oauth/token
   token:
     interceptor:
       enable: true
