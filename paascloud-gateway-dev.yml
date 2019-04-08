@@ -19,7 +19,8 @@ zuul:
       path: /uac/**
       sensitiveHeaders:
 #      strip-prefix: false
-      service-id: paascloud-provider-uac
+      service-id: 127.0.0.1
+      #paascloud-provider-uac
       ribbon:
         eager-load:
           enabled: true
@@ -31,7 +32,8 @@ zuul:
     mdc-route:
       path: /mdc/**
       sensitiveHeaders:
-      service-id: paascloud-provider-mdc
+      service-id: 127.0.0.1
+      #paascloud-provider-mdc
       ribbon:
         eager-load:
           enabled: true
@@ -43,7 +45,8 @@ zuul:
     omc-route:
       path: /omc/**
       sensitiveHeaders:
-      service-id: paascloud-provider-omc
+      service-id: 127.0.0.1
+      #paascloud-provider-omc
       ribbon:
         eager-load:
           enabled: true
@@ -55,7 +58,8 @@ zuul:
     opc-route:
       path: /opc/**
       sensitiveHeaders:
-      service-id: paascloud-provider-opc
+      service-id: 127.0.0.1
+      #paascloud-provider-opc
       ribbon:
         eager-load:
           enabled: true
@@ -67,7 +71,8 @@ zuul:
     mall-route:
       path: /mall/**
       sensitiveHeaders:
-      service-id: paascloud-web-mall
+      service-id: 127.0.0.1
+      #paascloud-web-mall
       ribbon:
         eager-load:
           enabled: true
@@ -79,7 +84,8 @@ zuul:
     tpc-route:
       path: /tpc/**
       sensitiveHeaders:
-      service-id: paascloud-provider-tpc
+      service-id: 127.0.0.1
+      #paascloud-provider-tpc
       ribbon:
         eager-load:
           enabled: true
@@ -94,15 +100,20 @@ zuul:
 security:
   oauth2:
     client:
-      clientId: paascloud-client-gateway
+      clientId: 127.0.0.1
+      #paascloud-client-gateway
       clientSecret: paascloudClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://127.0.0.1:7979/uac/oauth/token
+      #http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://127.0.0.1:7979/uac/oauth/authorize
+      #http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
+      user-info-uri: http://127.0.0.1:7979/uac/user
+      #http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://127.0.0.1:8000/oauth/token_key
+        #http://paascloud-provider-uac:8000/oauth/token_key
 
 proxy:
   auth:
