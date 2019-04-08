@@ -5,7 +5,8 @@ spring:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_omc?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/paascloud_omc?useUnicode=true&characterEncoding=UTF-8
+    #jdbc:mysql://paascloud-db-mysql:3306/paascloud_omc?useUnicode=true&characterEncoding=UTF-8
 
 liquibase:
   change-log: classpath:liquibase/index.xml
@@ -35,13 +36,17 @@ security:
     client:
       clientId: paascloud-client-omc
       clientSecret: paascloudClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://127.0.0.1:7979/uac/oauth/token
+      #http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://127.0.0.1:7979/uac/oauth/authorize
+      #http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
+      user-info-uri: http://127.0.0.1:7979/uac/user
+      #http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://127.0.0.1:8000/oauth/token_key
+        #http://paascloud-provider-uac:8000/oauth/token_key
 
 paascloud:
   enableSqlLogInterceptor: false
@@ -57,7 +62,8 @@ paascloud:
     interceptor:
       enable: true
   zk:
-    zkAddressList: paascloud-provider-zk:2181
+    zkAddressList: 127.0.0.1:2181
+    #paascloud-provider-zk:2181
   oauth2:
     jwtSigningKey: paascloud
     client:
@@ -69,7 +75,8 @@ paascloud:
       tokenStore: jwt
   alipay:
     callback:
-      url: http://api.paascloud.net/omc/pay/alipayCallback
+      url: http://127.0.0.1/omc/pay/alipayCallbace
+      #http://api.paascloud.net/omc/pay/alipayCallback
     qrCode:
       pcPath: E:/File/alipay/QRCode
       qiniuPath: alipay/QRCode/
