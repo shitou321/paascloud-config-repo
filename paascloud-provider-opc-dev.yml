@@ -90,7 +90,8 @@ paascloud:
       enable: true
       reliableMessageConsumer: true
       reliableMessageProducer: false
-      namesrvAddr: paascloud-mq-rocket:9876
+      namesrvAddr: 127.0.0.1:9876
+      #paascloud-mq-rocket:9876
       instanceName: paascloud-provider-opc
       consumerGroup: CID_OPC
       producerGroup: PID_OPC
