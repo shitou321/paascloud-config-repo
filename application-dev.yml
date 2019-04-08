@@ -13,13 +13,13 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: paascloud-mq-rabbit
+    host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
   redis:
     host: 127.0.0.1
-    password: myRedis231
+    #password: myRedis231
     port: 6379
     timeout: 0
   datasource:
@@ -114,7 +114,7 @@ paascloud:
       accessKeyId: 'your aliyun accessKeyId'
       accessKeySecret: 'your aliyun accessKeySecret'
     rocketMq:
-      namesrvAddr: paascloud-mq-rocket:9876
+      namesrvAddr: 127.0.0.1:9876
     sms:
       signName: 快乐学习网
       regionId: cn-beijing
@@ -131,9 +131,9 @@ paascloud:
       publicHost: 'your qiniu oss public host'
   alipay:
     callback:
-      url: http://dev-api.paascloud.net/omc/pay/alipayCallback
+      url: http://127.0.0.1/omc/pay/alipayCallback
     qrCode:
       pcPath: /data/file/qrCode/alipay
       qiniuPath: alipay/QRCode/
   zk:
-    zkAddressList: paascloud-provider-zk:2181
+    zkAddressList: 127.0.0.1:2181
