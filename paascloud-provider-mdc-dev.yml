@@ -67,7 +67,8 @@ paascloud:
       enable: false
       reliableMessageConsumer: false
       reliableMessageProducer: true
-      namesrvAddr: paascloud-mq-rocket:9876
+      namesrvAddr: 127.0.0.1:9876
+      #paascloud-mq-rocket:9876
       instanceName: paascloud-provider-mdc
       consumerGroup: CID_MDC
       producerGroup: PID_MDC
